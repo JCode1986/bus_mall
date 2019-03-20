@@ -20,22 +20,28 @@
   </header>
   <main>
     <h2>Vote for a Product</h2>
+    <ul id = "resultList"></ul>
     <section id="all_products">
       <div id="left_img">
         <img id="left_product_img" src="/Images/boots.jpg" alt="Product" style="width: 50%">
-        <h3 class="product_heading">LEFT</h3>
+        <h3 class="product_heading">YOUR</h3>
       </div>
 
       <div id="middle_img">
       <img id="middle_product_img" src="/Images/breakfast.jpg" alt="Product" style="width: 50%">
-      <h3 class="product_heading">MIDDLE</h3>
+      <h3 class="product_heading">VOTE</h3>
       </div>
       <div id="right_img">
         <img id="right_product_img" src="/Images/bag.jpg" alt="Product" style="width: 50%">
-        <h3 class="product_heading">RIGHT</h3>
+        <h3 class="product_heading">MATTERS</h3>
       </div>
     </section>
+    <div id = "chart_container">
+      <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
     </main>
+
+    <script src ="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
