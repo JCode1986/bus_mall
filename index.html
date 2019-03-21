@@ -5,39 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>BusMall Potential Products</h1>
-    <div id= "nav">
+    <!-- <div id= "nav">
       <ul>
         <li>Home</li>
         <li>Location</li>
         <li>Buy Products</li>
       </ul>
-    </div>
+    </div> -->
   </header>
   <main>
-    <h2>Vote for a Product</h2>
-    <ul id = "resultList"></ul>
+    <h2 id = "header">Vote for a Product</h2>
     <section id="all_products">
-      <div id="left_img">
-        <img id="left_product_img" src="/Images/boots.jpg" alt="Product" style="width: 50%">
-        <h3 class="product_heading">YOUR</h3>
-      </div>
+      <img id="left_product" src="/Images/boots.jpg" alt="Product">
 
-      <div id="middle_img">
-      <img id="middle_product_img" src="/Images/breakfast.jpg" alt="Product" style="width: 50%">
-      <h3 class="product_heading">VOTE</h3>
-      </div>
-      <div id="right_img">
-        <img id="right_product_img" src="/Images/bag.jpg" alt="Product" style="width: 50%">
-        <h3 class="product_heading">MATTERS</h3>
-      </div>
+      <img id="middle_product" src="/Images/breakfast.jpg" alt="Product">
+      
+      <img id="right_product" src="/Images/bag.jpg" alt="Product">
+
     </section>
-    <div id = "chart_container">
-      <canvas id="myChart" width="400" height="400"></canvas>
+    <div id = "chart_container" style = "height: 600px">
+      <canvas id="myChart"></canvas>
     </div>
     </main>
 
