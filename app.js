@@ -15,6 +15,7 @@ var middleProduct = document.getElementById('middle_product');
 var rightProduct = document.getElementById('right_product');
 var clickCounter = 0;
 var allProducts = [];
+var previouslyPickedProducts = [];
 
 //Constructor===================================================================================================================
 
@@ -33,6 +34,26 @@ function pickThreeImagesAndIncrementAppeared(){
   var middleIndex = Math.floor(Math.random() * allProducts.length);
   var rightIndex = Math.floor(Math.random() * allProducts.length);
 
+//Eliminating duplicate images
+  while(leftIndex === middleIndex ||
+    middleIndex === rightIndex ||
+    rightIndex === leftIndex ||
+    previouslyPickedProducts.includes(leftIndex) ||
+    previouslyPickedProducts.includes(middleIndex) ||
+    previouslyPickedProducts.includes(rightIndex))  
+  if(leftIndex === middleIndex || previouslyPickedProducts.includes(leftIndex)) { 
+    leftIndex = Math.floor(Math.random() * allProducts.length);
+    console.log('Duplicate picture detected, picking new images.');
+  } else if (middleIndex === rightIndex || previouslyPickedProducts.includes(middleIndex)) {
+    middleIndex = Math.floor(Math.random() * allProducts.length);
+    console.log('Duplicate picture detected, picking new images.');
+  } else if (rightIndex === leftIndex || previouslyPickedProducts.includes(rightIndex)) {
+    rightIndex = Math.floor(Math.random() * allProducts.length);
+    console.log('Duplicate picture detected, picking new images.');
+  }
+
+  previouslyPickedProducts = [leftIndex, middleIndex, rightIndex];
+
   allProducts[leftIndex].appeared++;
   allProducts[middleIndex].appeared++;
   allProducts[rightIndex].appeared++;
@@ -41,6 +62,7 @@ function pickThreeImagesAndIncrementAppeared(){
   middleProduct.src = allProducts[middleIndex].url;
   rightProduct.src = allProducts[rightIndex].url;
 }
+
 
 //===============================================================================================================================
 //Helpers and handlers
@@ -64,10 +86,13 @@ function handleClickOnProduct(){
     if(clickCounter > 24){
     resultList.removeEventListener('click', handleClickOnProduct);
     alert('Selection Complete. Click OK for Results.')
+    
     //remove products from page
     document.getElementById('all_products').style.display = 'none'
+    
     //remove header from page
     document.getElementById('header').style.display = 'none';
+    
     //invoke chart 
     buildMyChart();
 
