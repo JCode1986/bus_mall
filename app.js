@@ -61,6 +61,10 @@ function pickThreeImagesAndIncrementAppeared(){
   leftProduct.src = allProducts[leftIndex].url;
   middleProduct.src = allProducts[middleIndex].url;
   rightProduct.src = allProducts[rightIndex].url;
+
+  leftProduct.name = allProducts[leftIndex].name;
+  middleProduct.name = allProducts[middleIndex].name;
+  rightProduct.name = allProducts[rightIndex].name;
 }
 
 
@@ -75,7 +79,7 @@ function handleClickOnProduct(){
   //figure out which image was clicked
   // Do for all images
   for( var i = 0; i < allProducts.length; i++){
-    if(event.target.src.includes(allProducts[i].url)){
+    if(event.target.name.includes(allProducts[i].name)){
       console.log(`${allProducts[i].name} was picked`);
       allProducts[i].clicks++;
     }
