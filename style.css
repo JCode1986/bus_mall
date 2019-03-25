@@ -12,6 +12,8 @@ body {
   background-color: red;
   background-color: #359d2299;
   height: 300px;
+  width: 1470px;
+  margin: auto
 }
 #left_product, #middle_product, #right_product {
   width: 31.3%;
@@ -38,15 +40,6 @@ h2 {
   padding-top: 50px;
   font-size: 30px;
 }
-/* li {
-  display:inline;
-  padding: 7.5em;
-}
-ul {
-  text-align: center;
-  font-size: 17px;
-  font-family: fantasy;
-} */
 #nav {
   background-color: #efefef;
   padding: 0.5em 0;
